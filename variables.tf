@@ -24,3 +24,7 @@ variable "subnets" {
 }
 
 
+variable "ssh_public_key" {
+  description = "SSH public key used for Azure Linux VM authentication"
+  type        = string
+}
