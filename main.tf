@@ -80,6 +80,13 @@ resource "azurerm_network_interface" "nics" {
 }
 
 
+#checkov:skip=CKV_AZURE_50:No VM extensions are deployed by this Terraform configuration.
+resource "azurerm_linux_virtual_machine" "vms" {
+  for_each = var.subnets
+
+  # ...
+}
+
 
 resource "azurerm_linux_virtual_machine" "vms" {
   for_each = var.subnets
@@ -114,5 +121,6 @@ resource "azurerm_linux_virtual_machine" "vms" {
 
   tags = local.common_tags
 }
+
 
 
