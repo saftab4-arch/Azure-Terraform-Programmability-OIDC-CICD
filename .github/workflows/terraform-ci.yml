@@ -54,10 +54,10 @@ jobs:
 
       - name: Run Checkov
         uses: bridgecrewio/checkov-action@v12
-         with:
-           directory: .
-           framework: terraform
-           skip_check: CKV_AZURE_50
+        with:
+          directory: .
+          framework: terraform
+          skip_check: CKV_AZURE_50
 
       # Show what Terraform WOULD change — no deployment
       - name: Terraform Plan
